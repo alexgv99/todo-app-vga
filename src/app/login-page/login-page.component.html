@@ -1,0 +1,17 @@
+<div class="modal-dialog">
+	<div class="loginmodal-container">
+		<h1>Escolha o método de login</h1>
+		<div class="loginmodal-buton facebook" (click)="loginWithFacebook()">
+			<img src="/assets/images/facebook.png" alt=""><i>Login com Facebook</i>
+			<div class="clear"></div>
+		</div>
+		<div class="loginmodal-buton twitter" (click)="loginWithTwitter()">
+			<img src="/assets/images/twitter.png" alt=""><i>Login com Twitter</i>
+			<div class="clear"></div>
+		</div>
+		<div class="loginmodal-buton google" (click)="loginWithGoogle()" (tap)="loginWithGoogle()">
+			<img src="/assets/images/gplus.png" alt=""><i>Login com Google+</i>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
