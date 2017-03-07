@@ -11,6 +11,7 @@ import { AF } from '../providers/af';
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { ReverseOrderPipe } from './pipes/reverse-order.pipe';
 
 export const firebaseConfig = {
 	apiKey: 'AIzaSyCDTUwaYn6bwnyIJcOv4oBYXTpM6GJydFA',
@@ -30,7 +31,8 @@ const routes: Routes = [
 	declarations: [
 		AppComponent,
 		LoginPageComponent,
-		HomePageComponent
+		HomePageComponent,
+		ReverseOrderPipe
 	],
 	imports: [
 		BrowserModule,

@@ -11,22 +11,19 @@ import { AF } from '../providers/af';
 export class AppComponent {
 
 	public isLoggedIn: boolean;
+	user: string;
 
 	constructor(public afService: AF, private router: Router) {
 		this.afService.af.auth.subscribe(
 			auth => {
 				if (auth == null) {
-					console.log('Not Logged in.');
 					this.router.navigate(['login']);
 					this.isLoggedIn = false;
 				}
 				else {
-					console.log('Successfully Logged in.');
 					this.isLoggedIn = true;
 					this.afService.user = auth;
-					console.log('user', JSON.stringify(auth, null, '  '));
-					// UPDATE: I forgot this at first. Without it when a user is logged in and goes directly to /login
-					// the user did not get redirected to the home page.
+					this.user = auth.auth.displayName;
 					this.router.navigate(['']);
 				}
 			}

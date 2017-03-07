@@ -1,1 +1,14 @@
- home-page works!
+<div class="jumbotron">
+	<div *ngFor="let message of messages">
+		<div class="bubble" [class.you]="isYou(message.email)" [class.me]="isMe(message.email)">
+			<p>{{ message.message }}</p>
+			<div class="author">
+				{{ isMe(message.email) ? 'Você' : message.displayName }} | {{ message.timestamp | date:"dd/MM/yy HH:mm" }}
+			</div>
+		</div>
+	</div>
+</div>
+<figure class="send-box">
+	<input #message class="message-text" [(ngModel)]="newMessage" (keyup.enter)="sendMessage()">
+	<i class="btn btn-primary" (click)="sendMesage()">SEND</i>
+</figure>
